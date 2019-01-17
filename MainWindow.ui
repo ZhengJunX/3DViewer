@@ -42,7 +42,67 @@
        <number>9</number>
       </property>
       <item>
+       <widget class="QPushButton" name="ButtonAbout">
+        <property name="minimumSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#ButtonAbout
+{
+	background-color: transparent;
+	border-radius: 10px;
+}
+
+QPushButton#ButtonAbout:hover
+{
+	padding-left: -1px;
+	padding-top:  -1px;
+}
+
+QPushButton#ButtonAbout:pressed
+{
+	padding-left: 0px;
+	padding-top:  0px;
+}</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resourse.qrc">
+          <normaloff>:/Image/ImageAbout</normaloff>:/Image/ImageAbout</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QLabel" name="LabelStatus">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -65,13 +125,13 @@
        <widget class="QSlider" name="Slider">
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>250</width>
           <height>20</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
+          <width>250</width>
           <height>20</height>
          </size>
         </property>
@@ -179,6 +239,8 @@ QPushButton#ButtonClear:pressed
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resourse.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Image">
+        <file alias="ImageSCAU">resourse/image/SchoolBadge.png</file>
+        <file alias="ImageDZ">resourse/image/dz.png</file>
+        <file alias="ImageEQD">resourse/image/eqd.png</file>
+        <file alias="ImageAbout">resourse/image/help.png</file>
+    </qresource>
+</RCC>

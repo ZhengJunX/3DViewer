@@ -1,55 +1,40 @@
 /**
   ******************************************************************************
-  * @file    MainWindow.h
+  * @file    AboutWindow.h
   * @author  Junxin Zheng
   * @version V1.0.0
-  * @date    17-January-2019
+  * @date    15-January-2019
   * @brief   ...
   ******************************************************************************
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef ABOUTWINDOW_H
+#define ABOUTWINDOW_H
 
 /* Includes ------------------------------------------------------------------*/
-#include <QMainWindow>
-#include <QFileDialog>
-#include <QAxObject>
-#include "PointCloudViewer.h"
-#include "ExcelOperation.h"
-#include "AboutWindow.h"
+#include <QDialog>
 
 /* Macro Definition ----------------------------------------------------------*/
 /* Variables -----------------------------------------------------------------*/
 /* Function Declaration ------------------------------------------------------*/
 /* Class Declaration ---------------------------------------------------------*/
 namespace Ui {
-class MainWindow;
+class AboutWindow;
 }
 
-class MainWindow : public QMainWindow
+class AboutWindow : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
-public slots:
-    void ButtonOpenFile_clicked();
-    void ButtonClear_clicked();
-    void ButtonAbout_clicked();
-    void Slider_valueChanged();
-    void getExcelData(bool status);
+    explicit AboutWindow(QWidget *parent = nullptr);
+    ~AboutWindow();
 
 private:
-    void FurtherInit();
-    Ui::MainWindow *ui;
-    Viewer *viewer;
-    ExcelOperation *excelThread;
+    Ui::AboutWindow *ui;
 };
 
-#endif // MAINWINDOW_H
+#endif // ABOUTWINDOW_H
 
 /**************** (C) COPYRIGHT 2019 Junxin Zheng ******** END OF FILE ********/

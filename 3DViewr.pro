@@ -29,15 +29,18 @@ SOURCES += \
         main.cpp \
         MainWindow.cpp \
     ExcelOperation.cpp \
-    PointCloudViewer.cpp
+    PointCloudViewer.cpp \
+    AboutWindow.cpp
 
 HEADERS += \
         MainWindow.h \
     ExcelOperation.h \
-    PointCloudViewer.h
+    PointCloudViewer.h \
+    AboutWindow.h
 
 FORMS += \
-        MainWindow.ui
+        MainWindow.ui \
+    AboutWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -82,4 +85,7 @@ win32 {
                 }
         }
 }
+
+RESOURCES += \
+    resourse.qrc
 

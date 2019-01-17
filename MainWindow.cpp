@@ -45,6 +45,7 @@ void MainWindow::FurtherInit()
     // Signal-Slot Connection.
     connect(ui->ButtonOpenFile, &QPushButton::clicked,  this, &MainWindow::ButtonOpenFile_clicked);
     connect(ui->ButtonClear,    &QPushButton::clicked,  this, &MainWindow::ButtonClear_clicked);
+    connect(ui->ButtonAbout,    &QPushButton::clicked,  this, &MainWindow::ButtonAbout_clicked);
     connect(ui->Slider,         &QSlider::valueChanged, this, &MainWindow::Slider_valueChanged);
     connect(excelThread, &ExcelOperation::readFinished, this, &MainWindow::getExcelData);
 }
@@ -145,6 +146,19 @@ exitAddPoint:
 void MainWindow::Slider_valueChanged()
 {
     viewer->setLayerHeight(ui->Slider->value());
+}
+
+
+/*******************************************************************************
+  * @brief  Process when the button for showing about window is clicked.
+  * @param  None.
+  * @retval None.
+  *****************************************************************************/
+void MainWindow::ButtonAbout_clicked()
+{
+    AboutWindow about;
+    about.setModal(true);
+    about.exec();
 }
 
 /**************** (C) COPYRIGHT 2019 Junxin Zheng ******** END OF FILE ********/
