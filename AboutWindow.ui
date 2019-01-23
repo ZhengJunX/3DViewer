@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>240</height>
+    <height>265</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>400</width>
-    <height>240</height>
+    <height>250</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>400</width>
-    <height>240</height>
+    <height>265</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -135,7 +135,7 @@
           </font>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;      本软件基于&lt;span style=&quot; font-family:'Times New Roman,serif';&quot;&gt; Qt 5.12.0 与 QGLViewer &lt;/span&gt;进行开发，仅限用于华南农业&lt;/p&gt;&lt;p&gt;大学电子工程学院毕业设计答辩，不涉及商业用途。 &lt;/p&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-family:'Times New Roman,serif';&quot;&gt;ZhengJunX, 2019.01.17, Gaungzhou&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;      本软件基于&lt;span style=&quot; font-family:'Times New Roman,serif';&quot;&gt; Qt 5.12.0 与 QGLViewer &lt;/span&gt;进行开发，应用于华南农业大&lt;/p&gt;&lt;p&gt;学电子工程学院毕业设计研究。数据模型仅适配 &amp;quot;基于 &lt;span style=&quot; font-family:'Times New Roman,serif';&quot;&gt;LiDAR &lt;/span&gt;点云数&lt;/p&gt;&lt;p&gt;据的测算应用 &lt;span style=&quot; font-family:'Times New Roman,serif';&quot;&gt;(Shaoli Sun)&lt;/span&gt;&amp;quot;，不涉及商业用途。 &lt;/p&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-family:'Times New Roman,serif';&quot;&gt;Junxin Zheng, Shaoli Sun, 2019.01.17, Gaungzhou&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
