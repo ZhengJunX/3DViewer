@@ -33,6 +33,7 @@ void ExcelOperation::run()
 {
     fileVar.clear();
 
+    // Make sure that the excel file is present.
     if(fileName.isEmpty())
     {
         emit readFinished(false);
@@ -42,14 +43,8 @@ void ExcelOperation::run()
     // Open and read excel file.
     openExcel();
 
-    if(!fileVar.isNull())
-    {
-        emit readFinished(true);
-    }
-    else
-    {
-        emit readFinished(false);
-    }
+    // Emit a Signal.
+    emit readFinished(!fileVar.isNull());
 }
 
 

@@ -28,64 +28,42 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         MainWindow.cpp \
-    ExcelOperation.cpp \
-    PointCloudViewer.cpp \
-    AboutWindow.cpp
+        ExcelOperation.cpp \
+        PointCloudViewer.cpp \
+        AboutWindow.cpp
 
 HEADERS += \
         MainWindow.h \
-    ExcelOperation.h \
-    PointCloudViewer.h \
-    AboutWindow.h
+        ExcelOperation.h \
+        PointCloudViewer.h \
+        AboutWindow.h
 
 FORMS += \
         MainWindow.ui \
-    AboutWindow.ui
+        AboutWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-# win32:CONFIG(release, debug|release): LIBS += -L$$PWD/QGLViewer/lib/ -lQGLViewer2
-# else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/QGLViewer/lib/ -lQGLViewer2d
-# else:unix: LIBS += -L$$PWD/QGLViewer/lib/ -lQGLViewer2
-
-INCLUDEPATH += $$PWD/QGLViewer
-DEPENDPATH += $$PWD/QGLViewer
-
 win32 {
-        # Seems to be needed for Visual Studio with Intel compiler
-        # DEFINES *= WIN32
+    # Seems to be needed for Visual Studio with Intel compiler
+    # DEFINES *= WIN32
 
-        # Use native OpenGL drivers with Qt5.5
-        # No longer implicit since the ANGLE driver is now an alternative
-        LIBS += -lopengl32 -lglu32
+    # Use native OpenGL drivers with Qt5.5
+    # No longer implicit since the ANGLE driver is now an alternative
+    LIBS += -lopengl32 -lglu32
 
-        isEmpty( QGLVIEWER_STATIC ) {
-                CONFIG(debug, debug|release) {
-                        LIBS *= -L$$PWD/QGLViewer/lib/ -lQGLViewerd2
-                } else {
-                        LIBS *= -L$$PWD/QGLViewer/lib/ -lQGLViewer2
-                }
-        } else {
-                DEFINES *= QGLVIEWER_STATIC
-                CONFIG(debug, debug|release) {
-                        LIBS *= $$PWD/QGLViewer/lib/libQGLViewerd2.a
-                } else {
-                        LIBS *= $$PWD/QGLViewer/lib/libQGLViewer2.a
-                }
-        }
+    CONFIG(debug, debug|release) {
+        LIBS *= -L$$PWD/QGLViewer/lib/ -lQGLViewerd2
+    } else {
+        LIBS *= -L$$PWD/QGLViewer/lib/ -lQGLViewer2
+    }
 }
 
-win32 {
-        !designer {
-                exists( $${ROOT_DIRECTORY}/examples/qglviewer.rc ) {
-                        RC_FILE = $${ROOT_DIRECTORY}/examples/qglviewer.rc
-                }
-        }
-}
+INCLUDEPATH += $$PWD/QGLViewer $$PWD/QGLViewer/VRender
+DEPENDPATH  += $$PWD/QGLViewer $$PWD/QGLViewer/VRender
 
 RESOURCES += \
     resourse.qrc
-
