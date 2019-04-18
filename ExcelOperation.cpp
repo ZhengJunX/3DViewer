@@ -78,31 +78,36 @@ QVariant *ExcelOperation::getFileVariant()
 void ExcelOperation::openExcel()
 {
     // Initialing the Excel Engine.
-    QAxObject excel("Excel.Application");
+    // QAxObject excel("Excel.Application");
+    QAxObject *pExcel = new QAxObject(this);
+    pExcel->setControl("Excel.Application");
 
     // Hide the Window of Excel.
-    excel.setProperty("Visible", false);
+    pExcel->setProperty("Visible", false);
 
     // Get the collection of Excel Workbooks.
-    QAxObject *workBooks = excel.querySubObject("WorkBooks");
+    QAxObject *pWorkBooks = pExcel->querySubObject("WorkBooks");
 
     // Open Excel File.
-    workBooks->dynamicCall("Open(const QString&)", fileName);
+    pWorkBooks->dynamicCall("Open(const QString&)", fileName);
 
     // Get the current Excel Workbook.
-    QAxObject *workBook = excel.querySubObject("ActiveWorkBook");
+    QAxObject *pWorkBook = pExcel->querySubObject("ActiveWorkBook");
 
-    if (workBook->querySubObject("Sheets")->property("Count").toInt() > 0)
+    if (pWorkBook->querySubObject("Sheets")->property("Count").toInt() > 0)
     {
-        QAxObject *sheet = workBook->querySubObject("Sheets(int)", 1);
+        QAxObject *sheet = pWorkBook->querySubObject("Sheets(int)", 1);
         readAll(sheet);
     }
 
     // Close the Workbook.
-    workBook->dynamicCall("Close(Boolean)", false);
+    pWorkBook->dynamicCall("Close(Boolean)", false);
 
     // Close the Excel Engine.
-    excel.dynamicCall("Quit(void)");
+    pExcel->dynamicCall("Quit(void)");
+
+    // Free the Memory of <pExcel>
+    delete pExcel;
 }
 
 
